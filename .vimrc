@@ -7,11 +7,14 @@ set autoindent
 set cindent
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 set nu
+
+"t_Co即terminal Color之意
+set t_Co=256
 " 高亮当前行,一条线
 set cursorline
 "一行设置背景色
 "hi cursorline   cterm=NONE ctermbg=lightgray ctermfg=NON
-hi cursorline cterm=NONE ctermbg=000 ctermfg=NONE
+hi cursorline cterm=NONE ctermbg=233 ctermfg=NONE
 
 set foldmethod=indent
 "折叠代码： 快捷按键 zc
@@ -23,11 +26,11 @@ set foldmethod=indent
 "对第m行到第n行进行折叠： 打开折叠，使用命令： :m,nfoldopen, 关闭折叠，使用命令： :m,nfoldclose
 "在折叠代码中的上下移动： 在打开的折叠中：[z ]z 在关闭的折叠中：zj zk （一试便知）
 "遇到大写的字母就是shift+键盘上的字母
-if &term=="xterm"
-set t_Co=8
-set t_Sb=^[[4%dm
-set t_Sf=^[[3%dm
-endif
+"if &term=="xterm"
+"set t_Co=8
+"set t_Sb=^[[4%dm
+"set t_Sf=^[[3%dm
+"endif
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 "set tags="/home/chester/.vim/tags"
 map <F2> :NERDTreeToggle<CR>
