@@ -33,6 +33,13 @@ let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TlistToggle<CR>
 map <F4> t :NERDTreeMirror<CR>
+
+" 记住上次编辑的位置
+autocmd BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") |
+\   exe "normal! g'\"" |
+\ endif
+
 filetype plugin on
 set dictionary-=~/.vim/php_funclist.txt dictionary+=~/.vim/php_funclist.txt
 "Use the dictionary completion
