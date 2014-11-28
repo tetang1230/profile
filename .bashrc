@@ -21,8 +21,8 @@ alias svn-st='svn st | grep ^M'
 alias svn-log='svn log -v --limit 5'
 
 # pro
-alias ls='ls -l --color'
-alias ll='ls -l --color'
+alias ls='ls -al --color'
+alias ll='ls -al --color'
 alias la='ls --color -Aalth'
 alias l='ls --color -CF'
 alias lt='ls --color -lth'
