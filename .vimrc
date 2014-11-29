@@ -14,6 +14,10 @@ set t_Co=256
 set cursorline
 "一行设置背景色
 "hi cursorline   cterm=NONE ctermbg=lightgray ctermfg=NON
+"ctermbg是指背景色,hi又是指highlight line,下面这句话就是指
+"高亮鼠标所在行的背景颜色,里面的数字是指什么样的颜色
+"首先要设置你的终端->仿真->终端"xterm",选中ANSI颜色选项
+"终端里面输入命令:tput colors;结果显示256证明支持256色了
 hi cursorline cterm=NONE ctermbg=233 ctermfg=NONE
 
 set foldmethod=indent
