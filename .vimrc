@@ -1,4 +1,7 @@
+"高亮搜索
 set hlsearch
+"在搜索时，输入的词句的逐字符高亮（类似firefox的搜索） 
+set incsearch 
 syntax on
 set tabstop=4
 set softtabstop=4
@@ -20,6 +23,12 @@ set cursorline
 "终端里面输入命令:tput colors;结果显示256证明支持256色了
 hi cursorline cterm=NONE ctermbg=233 ctermfg=NONE
 
+"设置可是块的颜色
+"我securecrt显示的可视块颜色将里面的内容都盖掉了
+"我自己重新设置了下
+"命令模式下输入hi, 你会看到高亮显示的配置
+hi Visual term=reverse ctermbg=245 guibg=reverse
+
 set foldmethod=indent
 "折叠代码： 快捷按键 zc
 "递归折叠代码： 快捷按键 zC
@@ -35,6 +44,21 @@ set foldmethod=indent
 "set t_Sb=^[[4%dm
 "set t_Sf=^[[3%dm
 "endif
+
+"光标遇到折叠，折叠就打开 
+set foldopen=all 
+"移开折叠时自动关闭折叠 
+set foldclose=all 
+"置粘贴模式，这样粘贴过来的程序代码就不会错位了
+"默认打开这个功能,neocomplcache就会失效
+"set paste 
+
+"打开光标的行列位置显示功能 
+set ruler 
+
+"增强模式中的命令行自动完成操作 
+set wildmenu 
+
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 "set tags="/home/chester/.vim/tags"
 map <F2> :NERDTreeToggle<CR>
