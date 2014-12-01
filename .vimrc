@@ -65,6 +65,21 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :TlistToggle<CR>
 map <F4> t :NERDTreeMirror<CR>
 
+"快捷键for DoxGenToolKit
+map dx :Dox<CR>
+map da :DoxAut<CR>
+map dl :DoxLic<CR>
+
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  " 
+let g:DoxygenToolkit_paramTag_pre="@Param " 
+let g:DoxygenToolkit_returnTag="@Returns   " 
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
+let g:DoxygenToolkit_authorName="Ji Chao" 
+let g:DoxygenToolkit_licenseTag="My own license"
+
+map dx :Dox<CR>
+
 " 记住上次编辑的位置
 autocmd BufReadPost *
 \ if line("'\"") > 1 && line("'\"") <= line("$") |
