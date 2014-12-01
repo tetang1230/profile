@@ -15,6 +15,8 @@ export HISTCONTROL=ignoredups
 # set encode
 export LANG=en_US.UTF-8
 
+export TERM=xterm-256color
+
 ### alias ###
 # svn
 alias svn-st='svn st | grep ^M'
