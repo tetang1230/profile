@@ -61,6 +61,8 @@ set wildmenu
 
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 "set tags="/home/chester/.vim/tags"
+"以下去实时更新tags,目前不需要,只需手动执行下ctags就好了
+"au BufWritePost *.cpp,*.h,*.c,*.rl,*.def call system(“ctags –tag-relative -a -o ~/.vim/tags/usr/ctags/tags –extra=+q ” . expand(“%:p”))
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TlistToggle<CR>
 map <F4> t :NERDTreeMirror<CR>
