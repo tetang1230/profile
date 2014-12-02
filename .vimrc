@@ -68,9 +68,9 @@ map <F3> :TlistToggle<CR>
 map <F4> t :NERDTreeMirror<CR>
 
 "快捷键for DoxGenToolKit
-map dx :Dox<CR>
-map da :DoxAut<CR>
-map dl :DoxLic<CR>
+map gx :Dox<CR>
+map ga :DoxAut<CR>
+map gl :DoxLic<CR>
 
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  " 
 let g:DoxygenToolkit_paramTag_pre="@Param " 
