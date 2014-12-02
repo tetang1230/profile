@@ -80,8 +80,6 @@ let g:DoxygenToolkit_blockFooter="----------------------------------------------
 let g:DoxygenToolkit_authorName="Ji Chao" 
 let g:DoxygenToolkit_licenseTag="My own license"
 
-map dx :Dox<CR>
-
 " 记住上次编辑的位置
 autocmd BufReadPost *
 \ if line("'\"") > 1 && line("'\"") <= line("$") |
