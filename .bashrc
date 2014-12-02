@@ -180,6 +180,9 @@ export DYLD_LIBRARY_PATH
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]\[\033[31;40m\]@\[\033[00m\]\[\033[36;40m\]\h\[\033[00m\]:\[\033[35;40m\]\w\[\033[00m\]\$ '
 PS1="\[\033[01;32m\]\u\[\033[00m\]\[\033[31;40m\]@\[\033[00m\]\[\033[36;40m\]\h\[\033[00m\]:\[\033[35;40m\]\w\[\033[00m\]$yellow\$git_branch$white\$ $normal"
 
+#一些常用脚本都放到~/profile/bin里面
+#调用的时候,直接调用
+export PATH=~/profile/bin:$PATH;
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/usr/cocos/cocos2d-x-3.3rc0/tools/cocos2d-console/bin
