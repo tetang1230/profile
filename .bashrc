@@ -197,3 +197,9 @@ export PATH=${PATH}:/$NDK_ROOT
 
 export ANT_ROOT=/opt/apache-ant-1.9.4
 export PATH=${PATH}:/$ANT_ROOT/bin
+
+#发邮件,先要有sendEmail.pl
+#sendmail -f rd@baihe.com -t yangyj1@baihe.com -u "cmd test" -m "use cmd to test"
+alias sendmail='$HOME/profile/bin/script/sendEmail/sendEmail.pl -cc jichao@baihe.com -o message-content-type=auto -o message-charset=utf-8 -s smtp.163.com -xu zang_seng@163.com -xp woaini1230'
+
+
