@@ -165,7 +165,7 @@ export C_INCLUDE_PATH
 LIBRARY_PATH=$HOME/local/lib:/usr/local/lib:/usr/lib
 export LIBRARY_PATH
 
-LD_RUN_PATH=$HOME/local/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin
+LD_RUN_PATH=$HOME/profile/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin
 export LD_RUN_PATH
 
 # 在 mac 容易出问题，尤其在 jpeg/png 的多版本情况下
@@ -199,7 +199,7 @@ export ANT_ROOT=/opt/apache-ant-1.9.4
 export PATH=${PATH}:/$ANT_ROOT/bin
 
 #发邮件,先要有sendEmail.pl
-#sendmail -f rd@baihe.com -t yangyj1@baihe.com -u "cmd test" -m "use cmd to test"
-alias sendmail='$HOME/profile/bin/script/sendEmail/sendEmail.pl -cc jichao@baihe.com -o message-content-type=auto -o message-charset=utf-8 -s smtp.163.com -xu zang_seng@163.com -xp woaini1230'
+#sendmail -f rd@baihe.com -t jichao@baihe.com -u "test" -m "sendEmail.pl test"
+alias sendmail='$HOME/profile/bin/script/sendEmail/sendEmail.pl -o tls=no -o message-content-type=auto -o message-charset=utf-8 -s smtp.163.com -xu zang_seng@163.com -xp woaini1230'
 
 
