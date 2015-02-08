@@ -23,11 +23,20 @@ alias svn-st='svn st | grep ^M'
 alias svn-log='svn log -v --limit 5'
 
 # pro
-alias ls='ls -al --color'
-alias ll='ls -al --color'
-alias la='ls --color -Aalth'
-alias l='ls --color -CF'
-alias lt='ls --color -lth'
+#lias ls='ls -al --color'
+#alias ll='ls -al --color'
+#alias la='ls --color -Aalth'
+#alias l='ls --color -CF'
+#alias lt='ls --color -lth'
+#ostype=`uname -a`
+#oecho $ostype | tr '[:upper:]' '[:lower:]'
+ostype=`uname`
+if [ $ostype = 'Darwin' ]
+then
+    alias ls='ls -alG'
+else
+    alias ls='ls -al --color'
+fi
 alias tf='tail -f'
 alias grep='grep --color=auto'
 alias tree='tree -C'
