@@ -1,0 +1,2 @@
+#!/bin/bash 
+ssh work@172.16.9.22
