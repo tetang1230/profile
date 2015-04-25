@@ -210,9 +210,9 @@ then
 fi
 
 #mongodb
-if [ -d '/Users/chester/local/mongodb/bin' ]
+if [ -d '$HOME/local/mongodb/bin' ]
 then
-    export PATH=/Users/chester/local/mongodb/bin:$PATH;
+    export PATH=$HOME/local/mongodb/bin:$PATH;
 fi
 
 #一些常用脚本都放到~/profile/bin里面
