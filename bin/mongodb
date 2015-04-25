@@ -11,7 +11,9 @@ start() {
 
 stop() {
     pid=`ps -ef | grep mongod | grep -v grep | awk '{print $2}'`
-    kill $pid
+    if [ "$pid" != "" ]; then
+        kill $pid
+    fi  
 }
 
 case "$1" in
