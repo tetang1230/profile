@@ -210,7 +210,8 @@ then
 fi
 
 #mongodb
-if [ -d '$HOME/local/mongodb/bin' ]
+#$HOME是变量,所以判断的时候要用双引号
+if [ -d "$HOME/local/mongodb/bin" ]
 then
     export PATH=$HOME/local/mongodb/bin:$PATH;
 fi
