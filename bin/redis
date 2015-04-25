@@ -1,0 +1,42 @@
+#!/bin/sh
+# description: Startup and shutdown script for Redis
+REDIS_DIR=/Users/chester/local/redis
+REDIS_BIN_DIR=/usr/local/bin
+#export $REDIS_DIR
+ 
+REDIS_CONF=$REDIS_DIR/redis.conf
+REDIS_PID=$REDIS_DIR/var/run/redis.pid
+ 
+case $1 in
+    'start'|'s' )
+        if test -x $REDIS_BIN_DIR/redis-server
+        then
+            echo "Starting Redis..."
+            if $REDIS_BIN_DIR/redis-server $REDIS_CONF
+            then
+                echo "OK"
+            else
+                echo "failed"
+            fi
+        else
+            echo "Couldn't find Redis Server ($REDIS_BIN_DIR/redis-server)"
+        fi
+        ;;
+ 
+    'stop' )
+        echo "Stopping Redis..."
+        kill `cat $REDIS_PID`
+        ;;
+ 
+    'restart'|'reload'|'r' )
+        ${0} stop
+        ${0} start
+        ;;
+ 
+    'list'|'l' )
+        ps aux | egrep '(PID|redis-server)'
+        ;;
+ 
+    *)
+echo "usage: `basename $0` {start|restart|reload|stop|list}"
+esac

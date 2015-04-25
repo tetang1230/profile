@@ -82,6 +82,8 @@
     # 对 0x80以上的字符不进行quote,以正常显示中文
     quotepath = false
     editor = vim
+    #gitignore的全局配置
+	excludesfile = /Users/chester/.gitignore
 
 [branch "master"]
     remote = origin

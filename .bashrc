@@ -92,7 +92,7 @@ export LESS=' -R '
 export SVN_EDITOR=vim
 export EDITOR=vim
 
-export PATH=$HOME/local/bin:/usr/local/mysql/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/loca/sbin:/usr/local/mysql/bin:$PATH
 
 # some function
 function _memtop()
@@ -177,6 +177,13 @@ export LIBRARY_PATH
 LD_RUN_PATH=$HOME/profile/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin
 export LD_RUN_PATH
 
+MACOSX_DEPLOYMENT_TARGET=10.9
+CFLAGS="-arch x86_64 -g -Os -pipe -no-cpp-precomp"
+CCFLAGS="-arch x86_64 -g -Os -pipe"
+CXXFLAGS="-arch x86_64 -g -Os -pipe"
+LDFLAGS="-arch x86_64 -bind_at_load"
+export CFLAGS CXXFLAGS LDFLAGS CCFLAGS MACOSX_DEPLOYMENT_TARGET
+#export CFLAGS CXXFLAGS LDFLAGS CCFLAGS
 # 在 mac 容易出问题，尤其在 jpeg/png 的多版本情况下
 #DYLD_LIBRARY_PATH=$HOME/local/lib:/usr/local/mysql/lib
 #export DYLD_LIBRARY_PATH
@@ -193,29 +200,38 @@ export LD_RUN_PATH
 
 PS1="\[\033[01;32m\]\u\[\033[00m\]\[\033[31;40m\]@\[\033[00m\]\[\033[36;40m\]\h\[\033[00m\]:\[\033[35;40m\]\w\[\033[00m\]$yellow\$git_branch$white\$ $normal"
 
-#一些常用脚本都放到~/profile/bin里面
-#调用的时候,直接调用
 
+#下面是一些常用的环境变量,根据个人的目录结构定义
+
+#git
 if [ -d '/usr/local/git/bin' ]
 then
     export PATH=/usr/local/git/bin:$PATH;
 fi
 
+#mongodb
+if [ -d '/Users/chester/local/mongodb/bin' ]
+then
+    export PATH=/Users/chester/local/mongodb/bin:$PATH;
+fi
+
+#一些常用脚本都放到~/profile/bin里面
+#调用的时候,直接调用
 export PATH=~/profile/bin:$PATH;
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/usr/cocos/cocos2d-x-3.3rc0/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-export ANDROID_SDK_ROOT=/usr/android/adt/adt-bundle-linux-x86_64-20140702/sdk
-export PATH=${PATH}:/$ANDROID_SDK_ROOT/tools/
-export PATH=${PATH}:/$ANDROID_SDK_ROOT/platform-tools/
-
-export NDK_ROOT=/usr/android/android-ndk-r10c
-export PATH=${PATH}:/$NDK_ROOT
-
-export ANT_ROOT=/opt/apache-ant-1.9.4
-export PATH=${PATH}:/$ANT_ROOT/bin
+#export COCOS_CONSOLE_ROOT=/usr/cocos/cocos2d-x-3.3rc0/tools/cocos2d-console/bin
+#export PATH=$COCOS_CONSOLE_ROOT:$PATH
+#
+#export ANDROID_SDK_ROOT=/usr/android/adt/adt-bundle-linux-x86_64-20140702/sdk
+#export PATH=${PATH}:/$ANDROID_SDK_ROOT/tools/
+#export PATH=${PATH}:/$ANDROID_SDK_ROOT/platform-tools/
+#
+#export NDK_ROOT=/usr/android/android-ndk-r10c
+#export PATH=${PATH}:/$NDK_ROOT
+#
+#export ANT_ROOT=/opt/apache-ant-1.9.4
+#export PATH=${PATH}:/$ANT_ROOT/bin
 
 #发邮件,先要有sendEmail.pl
 #sendmail -f rd@baihe.com -t jichao@baihe.com -u "test" -m "sendEmail.pl test"
