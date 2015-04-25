@@ -83,7 +83,7 @@
     quotepath = false
     editor = vim
     #gitignore的全局配置
-	excludesfile = /Users/chester/.gitignore
+	excludesfile = $HOME/.gitignore
 
 [branch "master"]
     remote = origin
