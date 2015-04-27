@@ -216,6 +216,13 @@ then
     export PATH=$HOME/local/mongodb/bin:$PATH;
 fi
 
+#php
+if [ -d "$HOME/local/php/bin" ]
+then
+    export PATH=$HOME/local/php/bin:$PATH;
+    export PATH=$HOME/local/php/sbin:$PATH;
+fi
+
 #一些常用脚本都放到~/profile/bin里面
 #调用的时候,直接调用
 export PATH=~/profile/bin:$PATH;
