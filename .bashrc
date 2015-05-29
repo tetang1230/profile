@@ -204,9 +204,9 @@ PS1="\[\033[01;32m\]\u\[\033[00m\]\[\033[31;40m\]@\[\033[00m\]\[\033[36;40m\]\h\
 #下面是一些常用的环境变量,根据个人的目录结构定义
 
 #git
-if [ -d '/usr/local/git/bin' ]
+if [ -d "$HOME/local/git/bin" ]
 then
-    export PATH=/usr/local/git/bin:$PATH;
+    export PATH=$HOME/local/git/bin:$PATH;
 fi
 
 #mongodb
@@ -221,6 +221,19 @@ if [ -d "$HOME/local/php/bin" ]
 then
     export PATH=$HOME/local/php/bin:$PATH;
     export PATH=$HOME/local/php/sbin:$PATH;
+fi
+
+#ImageMagick
+if [ -d "$HOME/local/imagemagick" ]
+then 
+    export PATH=$HOME/local/imagemagick/bin:$PATH;
+fi
+
+#git-completion
+
+if [ -f "$HOME/profile/git-completion.bash" ]
+then
+    . $HOME/profile/git-completion.bash
 fi
 
 #一些常用脚本都放到~/profile/bin里面
