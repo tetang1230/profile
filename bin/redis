@@ -6,7 +6,10 @@ REDIS_BIN_DIR=/usr/local/bin
  
 REDIS_CONF=$REDIS_DIR/redis.conf
 REDIS_PID=$REDIS_DIR/var/run/redis.pid
- 
+cd $REDIS_DIR 
+#这步很关键,先进入到redis自己的目录,确保redis对当前目录有足够的权限,这样才能保证持久化的操作,不然没法
+#写数据到磁盘上
+
 case $1 in
     'start'|'s' )
         if test -x $REDIS_BIN_DIR/redis-server
