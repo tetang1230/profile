@@ -1,4 +1,3 @@
-set fileencoding=utf-8
 "高亮搜索
 set hlsearch
 "在搜索时，输入的词句的逐字符高亮（类似firefox的搜索） 
@@ -31,6 +30,9 @@ hi cursorline cterm=NONE ctermbg=233 ctermfg=NONE
 "我自己重新设置了下
 "命令模式下输入hi, 你会看到高亮显示的配置
 hi Visual term=reverse ctermbg=245 guibg=reverse
+
+"menu弹层
+hi Pmenu ctermbg=2
 
 set foldmethod=indent
 "折叠代码： 快捷按键 zc
