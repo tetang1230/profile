@@ -32,7 +32,12 @@ hi cursorline cterm=NONE ctermbg=233 ctermfg=NONE
 hi Visual term=reverse ctermbg=245 guibg=reverse
 
 "menu弹层
-hi Pmenu ctermbg=2
+"hi Pmenu ctermbg=2
+"背景深
+"highlight Pmenu ctermbg=darkred
+"highlight Pmenu ctermbg=2
+highlight Pmenu ctermbg=2
+highlight PmenuSel ctermbg=2 ctermfg=yellow
 
 set foldmethod=indent
 "折叠代码： 快捷按键 zc
