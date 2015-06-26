@@ -34,10 +34,11 @@ hi Visual term=reverse ctermbg=245 guibg=reverse
 "menu弹层
 "hi Pmenu ctermbg=2
 "背景深
-"highlight Pmenu ctermbg=darkred
+highlight Pmenu ctermbg=darkred
+highlight PmenuSel ctermbg=red ctermfg=yellow
+"下面是我自己试验的绿色系的,感觉还是红色的好点
 "highlight Pmenu ctermbg=2
-highlight Pmenu ctermbg=2
-highlight PmenuSel ctermbg=2 ctermfg=yellow
+"highlight PmenuSel ctermbg=2 ctermfg=yellow
 
 set foldmethod=indent
 "折叠代码： 快捷按键 zc
