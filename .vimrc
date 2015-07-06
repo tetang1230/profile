@@ -1,3 +1,8 @@
+" just for encode
+set fileencodings=utf-8,gb2312,gbk,gb18030
+set termencoding=utf-8
+set fileformats=unix
+set encoding=utf-8
 "高亮搜索
 set hlsearch
 "在搜索时，输入的词句的逐字符高亮（类似firefox的搜索） 
