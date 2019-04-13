@@ -44,7 +44,19 @@ if [ "$#" -lt 1 ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   exit 1
 fi
 
-{ eval "$GET_ID" ; } | ssh ${1%:} "umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys" || exit 1
+#ssh-copy-id -i id_rsa.pub work@45.62.111.8 -p28629
+#正常可能都是访问22端口，不过我的搬瓦工vps的端口是
+#自定义的，端口号是28629，这时候就要指定端口了
+#由于此脚本用到了shift命令，shift代表将第n+1个参数
+#变成第n个参数，所以-p28629变成了第二个参数了
+
+DEST="${1%:}"
+if [ -n $2 ]; then
+  DEST="${1%:} $2"
+fi
+echo $DEST
+
+{ eval "$GET_ID" ; } | ssh $DEST "umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys" || exit 1
 
 cat <<EOF
 Now try logging into the machine, with "ssh '${1%:}'", and check in:
