@@ -1,3 +1,8 @@
+" just for encode
+set fileencodings=utf-8,gb2312,gbk,gb18030
+set termencoding=utf-8
+set fileformats=unix
+set encoding=utf-8
 "高亮搜索
 set hlsearch
 "在搜索时，输入的词句的逐字符高亮（类似firefox的搜索） 
@@ -12,9 +17,6 @@ set autoindent
 set cindent
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 set nu
-
-"添加cscope表示执行成功或失败的信息
-set csverb
 
 "t_Co即terminal Color之意
 set t_Co=256
@@ -73,28 +75,20 @@ set ruler
 "增强模式中的命令行自动完成操作 
 set wildmenu 
 
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'fatih/vim-go'
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
 
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 "set tags="/home/chester/.vim/tags"
 "以下去实时更新tags,目前不需要,只需手动执行下ctags就好了
 "au BufWritePost *.cpp,*.h,*.c,*.rl,*.def call system(“ctags –tag-relative -a -o ~/.vim/tags/usr/ctags/tags –extra=+q ” . expand(“%:p”))
-map <F6> :NERDTreeToggle<CR>
-map <F7> :TlistToggle<CR>
-map <F8> t :NERDTreeMirror<CR>
+map <F2> :NERDTreeToggle<CR>
+map <F3> :TlistToggle<CR>
+map <F4> t :NERDTreeMirror<CR>
 
 "快捷键for DoxGenToolKit
 map gx :Dox<CR>
