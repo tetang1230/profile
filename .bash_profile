@@ -10,4 +10,4 @@ fi
 
 #cowsay -l | awk 'BEGIN{srand();a=""}{if(NR != 1){ if(a==""){a=$0}else{a = (a" "$0)} }} END {len = split(a, c, " "); txt=" \"i fuck you\"     " ; r=int(rand()*len); if(r==0 || r == 33 || r == 38){ system("cowsay -f " c[7] " 来吧，骚年，开工了！" );} else { print r; system("cowsay -f " c[r] "  来吧，骚年，开工了！" ); }}'
 
-cowsay -l | awk 'BEGIN{srand();a=""}{if(NR != 1){ if(a==""){a=$0}else{a = (a" "$0)} }} END {len = split(a, c, " "); txt=" \"i fuck you\"     " ; r=int(rand()*len); if(r==0 || c[r] == "telebears" || c[r] == "sodomized"){ system("cowsay -f daemon 来吧，骚年，开工了！" );} else { system("cowsay -f " c[r] "  来吧，骚年，开工了！" ); }}'
+cowsay -l | awk 'BEGIN{srand();a=""}{if(NR != 1){ if(a==""){a=$0}else{a = (a" "$0)} }} END {len = split(a, c, " "); txt=" \"i fuck you\"     " ; r=int(rand()*len); if(r==0 || c[r] == "telebears" || c[r] == "sodomized"){ system("go go go 开工了！" );} else { system("cowsay -f " c[r] "  go go go，开工了！" ); }}'
