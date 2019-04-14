@@ -182,7 +182,13 @@ CFLAGS="-arch x86_64 -g -Os -pipe -no-cpp-precomp"
 CCFLAGS="-arch x86_64 -g -Os -pipe"
 CXXFLAGS="-arch x86_64 -g -Os -pipe"
 LDFLAGS="-arch x86_64 -bind_at_load"
-export CFLAGS CXXFLAGS LDFLAGS CCFLAGS MACOSX_DEPLOYMENT_TARGET
+
+if [ $ostype = 'Darwin' ]
+then
+  export CFLAGS CXXFLAGS LDFLAGS CCFLAGS MACOSX_DEPLOYMENT_TARGET
+#else
+  #export CFLAGS CXXFLAGS LDFLAGS CCFLAGS
+fi  
 #export CFLAGS CXXFLAGS LDFLAGS CCFLAGS
 # 在 mac 容易出问题，尤其在 jpeg/png 的多版本情况下
 #DYLD_LIBRARY_PATH=$HOME/local/lib:/usr/local/mysql/lib
@@ -239,6 +245,8 @@ fi
 #一些常用脚本都放到~/profile/bin里面
 #调用的时候,直接调用
 export PATH=~/profile/bin:$PATH;
+
+export PATH=/work/service/nginx/sbin:$PATH;
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 #export COCOS_CONSOLE_ROOT=/usr/cocos/cocos2d-x-3.3rc0/tools/cocos2d-console/bin
