@@ -75,19 +75,29 @@ set ruler
 "增强模式中的命令行自动完成操作 
 set wildmenu 
 
+"关闭兼容模式
+set nocompatible              
+filetype off                  
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+" all vundle plugins below
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'fatih/vim-go'
 
 
+call vundle#end()
 filetype plugin indent on    " required
 
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 "set tags="/home/chester/.vim/tags"
 "以下去实时更新tags,目前不需要,只需手动执行下ctags就好了
 "au BufWritePost *.cpp,*.h,*.c,*.rl,*.def call system(“ctags –tag-relative -a -o ~/.vim/tags/usr/ctags/tags –extra=+q ” . expand(“%:p”))
-map <F2> :NERDTreeToggle<CR>
-map <F3> :TlistToggle<CR>
+map <S-n> :NERDTreeToggle<CR>
+map <S-t> :TlistToggle<CR>
 map <F4> t :NERDTreeMirror<CR>
 
 "快捷键for DoxGenToolKit
@@ -143,13 +153,13 @@ autocmd BufNewFile,Bufread *.module,*.inc,*.php set keywordprg="help"
 let g:neocomplcache_enable_at_startup = 1
 
 "类似于AutoComplPop用法
-let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_enable_auto_select = 1
 
 "禁止AutoComplPop
-"let g:NeoComplCache_DisableAutoComplete = 1
+let g:NeoComplCache_DisableAutoComplete = 1
 
 "通过C-X,C-U打开匹配列表
-"let g:SuerTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuerTabDefaultCompletionType = '<C-X><C-U>'
 
 
 " neocompcache匹配字典
