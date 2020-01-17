@@ -3,11 +3,21 @@
 #用户主目录
 home=$(cd;pwd)
 cd $home
-git clone git@github.com:tetang1230/profile.git
-git clone git@github.com:tetang1230/.vim.git
+
+dot_vim_dir=$home/.vim
+#echo $dot_vim_dir
 
 profile_dir=$home/profile
 #echo $profile_dir
+
+git clone git@github.com:tetang1230/profile.git
+git clone git@github.com:tetang1230/.vim.git
+
+#吃实话submodule
+cd $dot_vim_dir
+git submodule init
+git submodule update
+
 
 #将带点的配置文件copy到用户主目录
 for file in `ls -a $profile_dir`
@@ -24,8 +34,6 @@ done
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install build-essential
 
-dot_vim_dir=$home/.vim
-#echo $dot_vim_dir
 
 c_tag_dir=$dot_vim_dir/ctags-5.8
 #echo $c_tag_dir
@@ -38,4 +46,4 @@ sudo apt -y install flex byacc libncurses-dev autotools-dev automake autoconf m4
 
 cscope_dir=$dot_vim_dir/cscope-15.8b
 #变异安装cscope
-cd $cscope_dir && ./configure && make && sudo make install
+cd $cscope_dir && sudo autoreconf -ivf && ./configure && make && sudo make install
