@@ -170,7 +170,8 @@ autocmd BufNewFile,Bufread *.module,*.inc,*.php set keywordprg="help"
 let g:neocomplcache_enable_at_startup = 1
 
 "类似于AutoComplPop用法
-"let g:neocomplcache_enable_auto_select = 1
+"这个变量容易引起sudo vim的错误
+let g:neocomplcache_enable_auto_select = 1
 
 "禁止AutoComplPop
 let g:NeoComplCache_DisableAutoComplete = 1
