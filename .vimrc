@@ -18,6 +18,8 @@ set cindent
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 set nu
 
+"添加cscope表示执行成功或失败的信息
+set csverb
 "t_Co即terminal Color之意
 set t_Co=256
 " 高亮当前行,一条线
@@ -34,8 +36,23 @@ hi cursorline cterm=NONE ctermbg=233 ctermfg=NONE
 "我securecrt显示的可视块颜色将里面的内容都盖掉了
 "我自己重新设置了下
 "命令模式下输入hi, 你会看到高亮显示的配置
-hi Visual term=reverse ctermbg=245 guibg=reverse
+"hi Visual term=reverse ctermbg=245 guibg=reverse
 
+" 判断操作系统
+"if (has("win32") || has("win64") || has("win32unix"))
+"    let g:isWin = 1
+"else
+"    let g:isWin = 0
+"endif
+let g:isMac = 0
+if (has("macunix"))
+    let g:isMac = 1
+endif
+
+ if (g:isMac)
+     hi Visual term=reverse ctermbg=245 guibg=reverse
+ endif
+"
 "menu弹层
 "hi Pmenu ctermbg=2
 "背景深
