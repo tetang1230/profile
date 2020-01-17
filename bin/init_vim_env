@@ -3,8 +3,8 @@
 #用户主目录
 home=$(cd;pwd)
 cd $home
-#git clone git@github.com:tetang1230/profile.git
-#git clone git@github.com:tetang1230/.vim.git
+git clone git@github.com:tetang1230/profile.git
+git clone git@github.com:tetang1230/.vim.git
 
 profile_dir=$home/profile
 #echo $profile_dir
