@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#用户主目录
+home=$(cd;pwd)
+cd $home
+#git clone git@github.com:tetang1230/profile.git
+#git clone git@github.com:tetang1230/.vim.git
+
+profile_dir=$home/profile
+#echo $profile_dir
+
+#将带点的配置文件copy到用户主目录
+for file in `ls -a $profile_dir`
+do
+    file_path=$profile_dir/$file
+    if [[ -f $file_path ]] && [[ ${file:0:1} == '.' ]]
+    then
+        echo "cp $file_path $home "
+        cp $file_path $home
+    fi
+done
+
+#必要更新
+sudo apt update && sudo apt -y upgrade
+sudo apt -y install build-essential
+
+dot_vim_dir=$home/.vim
+#echo $dot_vim_dir
+
+c_tag_dir=$dot_vim_dir/ctags-5.8
+#echo $c_tag_dir
+
+#变异安装ctag
+cd $c_tag_dir && ./configure && make && sudo make install
+
+#cscope各种依赖
+sudo apt -y install flex byacc libncurses-dev autotools-dev automake autoconf m4 perl
+
+cscope_dir=$dot_vim_dir/cscope-15.8b
+#变异安装cscope
+cd $cscope_dir && ./configure && make && sudo make install
