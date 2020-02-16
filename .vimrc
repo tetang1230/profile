@@ -155,7 +155,7 @@ if !exists('g:AutoComplPop_Behavior')
     let g:AutoComplPop_Behavior = {}
     let g:AutoComplPop_Behavior['php'] = []
     call add(g:AutoComplPop_Behavior['php'], {
-            \ 'command' : "\<C-x>\<C-o>",
+            \ 'command' : "\<C-x>\<C-p>",
             \ 'pattern' : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
             \ 'repeat' : 0,
             \})
